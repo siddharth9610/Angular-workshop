@@ -1,0 +1,8 @@
+<mat-form-field class="limit-filters" appearance="outline" floatLabel="always">
+    <mat-label>Limit</mat-label>
+    <mat-select [formControl]="limitControl" placeholder="Limits">
+        <mat-option *ngFor="let limit of limits" [value]="limit" (click)="selectLimit()">
+            {{ limit }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>

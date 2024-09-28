@@ -1,0 +1,20 @@
+<div class="main-container">
+    <app-header class="header-container"></app-header>
+    <section class="body-section">
+        <app-filters 
+            class="filters"
+            (breedsEmitter)="setBreed($event)" 
+            (allBreedsEmitter)="allBreedsSelected()" 
+            (limitSelected)="setLimit($event)"
+        >
+        </app-filters>
+        <div class="cards-container">
+            <div *ngIf="!isLoading; else loading" class="cards-box">
+                <app-cats-card class="cat-card" *ngFor="let cat of cats" [cat]="cat"></app-cats-card>
+            </div>
+            <ng-template #loading>
+                <mat-spinner></mat-spinner>
+            </ng-template>
+        </div>
+    </section>
+</div>

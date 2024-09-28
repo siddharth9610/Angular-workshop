@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cats-img-app": {
+      "hosting": {
+        "cats-images-app": [
+          "cats-img-app"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cats-img-app"
+  }
+}

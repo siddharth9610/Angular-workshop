@@ -1,0 +1,9 @@
+.limit-filters {
+    width: 120px;
+}
+
+@media (max-width: 540px) {
+    .limit-filters {
+        width: 100%;
+    }
+}

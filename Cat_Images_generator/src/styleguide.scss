@@ -1,0 +1,59 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$cats-images-app-primary: mat.define-palette(mat.$gray-palette, 900);
+$cats-images-app-accent: mat.define-palette(mat.$teal-palette, 200, 100, 400);
+$cats-images-app-warn: mat.define-palette(mat.$red-palette);
+
+$cats-images-app-theme: mat.define-light-theme((
+  color: (
+    primary: $cats-images-app-primary,
+    accent: $cats-images-app-accent,
+    warn: $cats-images-app-warn,
+  )
+));
+
+@include mat.all-component-themes($cats-images-app-theme);
+
+:root {
+    --black: rgb(31, 31, 31);
+    --grey: #979797;
+    --light-grey: #EEEEEE;
+    --white: rgb(255, 255, 255);
+    --accent: #80cbc4;
+}
+
+// Scrollbar styles
+
+::-webkit-scrollbar {
+    height: 16px;
+    width: 16px;
+}
+   
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+   
+::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    border: 3px solid transparent;
+    background-color: var(--grey);
+    background-clip: content-box;
+}
+
+// Materials styles
+
+.breed-option mat-pseudo-checkbox {
+    display: none;
+}
+
+.breeds-chip {
+    background-color: var(--accent) !important;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+    height: 12px;
+}

@@ -1,0 +1,25 @@
+.card {
+    display: flex;
+    height: 220px;
+    width: 220px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        box-shadow: 6px 6px var(--black);
+    }
+
+    .cat-image {
+        height: 100%;
+        width: 100%;
+        border-radius: 4px;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 540px) {
+    .card {
+        width: 100vw;
+    }
+}

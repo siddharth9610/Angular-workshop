@@ -1,0 +1,39 @@
+.filters-box {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 12px;
+
+    .filter {
+        display: flex;
+    }
+}
+
+.filters-selected-box {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 18px;
+
+    .filter-buttons {
+        display: flex;
+        gap: 16px;
+
+        .filt-btn {
+            padding: 12px;
+        }
+    }
+}
+
+@media (max-width: 540px) {
+    .filters-box {
+        justify-content: space-between;
+
+        :first-child {
+            width: 70%;
+        }
+
+        :last-child {
+            width: 30%;
+        }
+    }
+}

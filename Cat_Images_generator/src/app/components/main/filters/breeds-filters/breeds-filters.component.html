@@ -1,0 +1,21 @@
+<mat-form-field *ngIf="breeds" class="breeds-filters" appearance="outline" floatLabel="always">
+    <mat-label>Breeds</mat-label>
+    <input
+        type="text"
+        matInput
+        placeholder="Enter and select breed" 
+        [formControl]="filtersControl"
+        [matAutocomplete]="auto"
+        (keyup)="filterPredictions()"
+    />
+    <button *ngIf="filtersControl.value" matSuffix mat-icon-button aria-label="Clear" (click)="removeValue()">
+        <mat-icon>close</mat-icon>
+    </button>
+    <mat-autocomplete #auto="matAutocomplete">
+        <mat-option class="breed-option" value="all" (click)="selectAll()">All Breeds</mat-option>
+        <mat-divider></mat-divider>
+        <mat-option class="breed-option" *ngFor="let breed of filteredBreeds || breeds" [value]="breed" (click)="selectBreed(breed)">
+            <mat-checkbox [checked]="isChecked(breed)">{{ breed.name }}</mat-checkbox>
+        </mat-option>
+    </mat-autocomplete>
+</mat-form-field>

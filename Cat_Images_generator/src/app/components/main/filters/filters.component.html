@@ -1,0 +1,14 @@
+<form *ngIf="breeds && limits" class="filters-box">
+    <app-breeds-filters class="filter" [breeds]="breeds" [removeFilterEvent]="removeFilterSubject.asObservable()" (breedsEmit)="setBreeds($event)"></app-breeds-filters>
+    <app-limit-filters class="filter" [limits]="limits" (limitSelected)="setLimit($event)"></app-limit-filters>
+</form>
+<div *ngIf="breedsSelected && breedsSelected.length" class="filters-selected-box">
+    <mat-chip-listbox aria-label="Breed filters selected">
+        <mat-chip-option *ngFor="let breed of breedsSelected" class="breeds-chip" (click)="removeBreed(breed.id)">
+            {{ breed.name }}
+            <button matChipRemove (click)="removeBreed(breed.id)">
+              <mat-icon>cancel</mat-icon>
+            </button>
+        </mat-chip-option>
+    </mat-chip-listbox>
+</div>

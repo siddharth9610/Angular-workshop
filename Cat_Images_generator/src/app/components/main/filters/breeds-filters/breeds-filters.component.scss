@@ -1,0 +1,9 @@
+.breeds-filters {
+    width: 320px;
+}
+
+@media (max-width: 540px) {
+    .breeds-filters {
+        width: 100%;
+    }
+}
